@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!--header section starts-->
+<header class="header">
+    <section class="section">
+
+        <div id="menu-btn" class="fas fa-bars-staggered"></div>
+        <a href="home.html"  class="logo"><i class="fas fa-briefcase" ></i> JobHunt</a>
+        <nav class="navbar" id="">
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="jobs.html">All Jobs</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="login.html">Account</a>
+
+        </nav>
+        <a href="#" class="btn" style="margin-top: 0;">Post Job</a>
+    </section>
+</header>
+<!-- header section ends -->
+
+<!-- job filter section starts  -->
+<section class="jobfilter">
+    <h1 class="heading">filter jobs </h1>
+    <form action="" method="post">
+        <div class="flex">
+            <div class="box">
+                <p>job title <span>*</span></p>
+                <input type="text" name="Title" placeholder="Keyword, category or company" required maxlength="20" class="input">
+            </div>
+            <div class="box">
+                <p>Job Location</p>
+                <input type="text" name="Location" placeholder="State, city or localtiy" required maxlength="50" class="input">
+            </div>
+        </div>
+        <div class="dropdown-container">
+            <div class="dropdown">
+                <input type="text" readonly placeholder="date posted" name="date" maxlength="20" class="output">
+                <div class="lists">
+                    <p class="items">today</p>
+                    <p class="items">3 days ago</p>
+                    <p class="items">7 days ago</p>
+                    <p class="items">10 days ago</p>
+                    <p class="items">15 days ago</p>
+                    <p class="items">30 days ago</p>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <input type="text" readonly placeholder="work shifts" name="date" maxlength="20" class="output">
+                <div class="lists">
+                    <p class="items">day shift</p>
+                    <p class="items">night shift</p>
+                    <p class="items">flexible shift</p>
+                    <p class="items">fixed shift</p>
+                   
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <input type="text" readonly placeholder="education level" name="date" maxlength="20" class="output">
+                <div class="lists">
+                    <p class="items">10th pass</p>
+                    <p class="items">12th pass</p>
+                    <p class="items">bachelor's degree</p>
+                    <p class="items">master's degree</p>
+                    <p class="items">diploma</p>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <input type="text" readonly placeholder="job type" name="date" maxlength="20" class="output">
+                <div class="lists">
+                    <p class="items">full-time</p>
+                    <p class="items">part-time</p>
+                    <p class="items">internship</p>
+                    <p class="items">contact</p>
+                    <p class="items">temporary</p>
+                    <p class="items">fresher</p>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <input type="text" readonly placeholder="Estimated salary" name="date" maxlength="20" class="output">
+                <div class="lists">
+                    <p class="items">1k or less</p>
+                    <p class="items">1k - 5k</p>
+                    <p class="items">5k - 10k</p>
+                    <p class="items">10k - 20k</p>
+                    <p class="items">20k - 30k</p>
+                    <p class="items">30k - 40k</p>
+                    <p class="items">40k - 50k</p>
+                    <p class="items">50k - 1 lakh</p>
+                    <p class="items">1 lakh - 5 lakh</p>
+                    <p class="items">5 lakh - 10 lakh</p>
+                    <p class="items">10lakh - 50 lakh</p>
+                    <p class="items">50 lakh - 1 crore</p>
+                    <p class="items">1 crore - 10crore</p>
+                    <p class="items">10 crore or above</p>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</section>
+<!-- job filter section ends   -->
+
+<!-- all jobs section starts  -->
+<section class="jobs">
+    <h1 class="heading">All Jobs</h1>
+    <div class="boxcontainer">
+        <div class="box">
+            <div class="company">
+                <img src="data:image/png;base64,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" alt="" >
+                <div >
+                    <h3>IT infosys co.</h3>
+                    <p>2 days ago</p>
+                </div>
+            </div>
+            <h3 class="job-title">senior web developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>mumbai, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span>10k - 25k</span></p>
+                <p><i class="fas fa-briefcase"></i><span>part-time</span></p>
+                <p><i class="fas fa-clock"></i><span>day shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="data:image/png;base64,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" alt="" >
+                <div >
+                    <h3>software solutions</h3>
+                    <span>posted today</span>
+                </div>
+            </div>
+            <h3 class="job-title">javascript developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>mumbai, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span>10k - 25k</span></p>
+                <p><i class="fas fa-briefcase"></i><span>internship</span></p>
+                <p><i class="fas fa-clock"></i><span>night shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="data:image/png;base64,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" alt="" >
+                <div >
+                    <h3>IT world</h3>
+                    <span>19 days ago</span>
+                </div>
+            </div>
+            <h3 class="job-title">junior front-end</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>mumbai, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span>20k - 50k</span></p>
+                <p><i class="fas fa-briefcase"></i><span>contract</span></p>
+                <p><i class="fas fa-clock"></i><span>night shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLf5_hMcfy6per8SPxSmOEvjN44i6Xsrf1LQ&usqp=CAU" alt="" >
+                <div >
+                    <h3>info statics</h3>
+                    <span>2 days ago</span>
+                </div>
+            </div>
+            <h3 class="job-title">junior assistant</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>mumbai, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span>10k</span></p>
+                <p><i class="fas fa-briefcase"></i><span>temporary</span></p>
+                <p><i class="fas fa-clock"></i><span>flexible shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6c4HNPiSWhFfLI89h8akDH2hSiL23ZVTUfg&usqp=CAU" alt="" >
+                <div >
+                    <h3>mass idea</h3>
+                    <span>2 days ago</span>
+                </div>
+            </div>
+            <h3 class="job-title">PHP developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>mumbai, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span> 30k - 1lakh</span></p>
+                <p><i class="fas fa-briefcase"></i><span> fresher</span></p>
+                <p><i class="fas fa-clock"></i><span> fixed shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="company">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbia4JshV1OgH7MqWvAgWZUseKcw7Pgq2jlg&usqp=CAU" alt="" >
+                <div >
+                    <h3>System Technology</h3>
+                    <p> 1 month ago</p>
+                </div>
+            </div>
+            <h3 class="job-title">business analysist</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>delhi, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span>50k - 80k</span></p>
+                <p><i class="fas fa-briefcase"></i><span>part-time</span></p>
+                <p><i class="fas fa-clock"></i><span>flexible shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUxuCa6tUWcVWkNGGls7OUDqBDrlgUCMu0zQ&usqp=CAU" alt="" >
+                <div >
+                    <h3>SoTech technology</h3>
+                    <span>posted today</span>
+                </div>
+            </div>
+            <h3 class="job-title">app developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>gurugram, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span>25k - 30k</span></p>
+                <p><i class="fas fa-briefcase"></i><span>full-time</span></p>
+                <p><i class="fas fa-clock"></i><span>night shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgQTm7XcWQGX0rGyZxwb7nR8IL_EV0ycOdQ&usqp=CAU" alt="" >
+                <div >
+                    <h3>digital tech</h3>
+                    <span>5 days ago</span>
+                </div>
+            </div>
+            <h3 class="job-title">data analysist</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>mumbai, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span>20k - 25k</span></p>
+                <p><i class="fas fa-briefcase"></i><span>temporary</span></p>
+                <p><i class="fas fa-clock"></i><span>day shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkDJrj-0ClYpDhbvQ7X1F6AGrrxGBnA2gf_w&usqp=CAU" alt="" >
+                <div >
+                    <h3>mindtech softwares</h3>
+                    <span>posted today</span>
+                </div>
+            </div>
+            <h3 class="job-title"> assistant</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>hyderabad, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span>10k</span></p>
+                <p><i class="fas fa-briefcase"></i><span>temporary</span></p>
+                <p><i class="fas fa-clock"></i><span>day shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnNwavCuMVbU75ZQtD06HIXx9kJGdBflqB6Q&usqp=CAU" alt="" >
+                <div >
+                    <h3>Datatech eSolutions</h3>
+                    <span>2 days ago</span>
+                </div>
+            </div>
+            <h3 class="job-title">data analysist</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>pune, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span> 30k - 50k</span></p>
+                <p><i class="fas fa-briefcase"></i><span> fresher</span></p>
+                <p><i class="fas fa-clock"></i><span> fixed shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="company">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqVL2hHagNivrnlDM40Tyg6KwpEa7wTN76VQ&usqp=CAU" alt="" >
+                <div >
+                    <h3>source born</h3>
+                    <p>10 days ago</p>
+                </div>
+            </div>
+            <h3 class="job-title">back-end developer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>mumbai, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span>10k - 20k</span></p>
+                <p><i class="fas fa-briefcase"></i><span>part-time</span></p>
+                <p><i class="fas fa-clock"></i><span>night shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="company">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZnGLq8dzlmh6GMyooBS6BsG6oJHnBKqsLiQ&usqp=CAU" alt="" >
+                <div >
+                    <h3>tartan technology</h3>
+                    <span>posted a week ago</span>
+                </div>
+            </div>
+            <h3 class="job-title">mechanical engineer</h3>
+            <p class="location"><i class="fas fa-map-marker-alt"></i><span>pune, india</span></p>
+            <div class="tags">
+                <p><i class="fas fa-indian-rupee-sign"></i><span>10k - 25k</span></p>
+                <p><i class="fas fa-briefcase"></i><span>contract</span></p>
+                <p><i class="fas fa-clock"></i><span>day shift</span></p>
+                <br>
+            </div>
+            <div class="flex-btn">
+                <a href="viewjobs.html" class="btn">view details </a>
+                <button  class="far fa-heart" ></button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- alljobs section ends  -->
+
+
+
+<!-- footer section starts -->
+<footer class="footer">
+    <section class="grid">
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="home.html"><i class="fas fa-angle-right"></i> Home</a>
+            <a href="about.html"><i class="fas fa-angle-right"></i> About</a>
+            <a href="jobs.html"><i class="fas fa-angle-right"></i> All Jobs</a>
+            <a href="contact.html"><i class="fas fa-angle-right"></i> Contact Us</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Filter search</a>
+        </div>
+        <div class="box">
+            <h3>ExtraLinks</h3>
+            
+            <a href="login.html"><i class="fas fa-angle-right"></i> Log In</a>
+            <a href="register.html"><i class="fas fa-angle-right"></i> Register</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Post Job</a>
+            <a href="#"><i class="fas fa-angle-right"></i> Dashboard</a>
+        </div>
+        <div class="box">
+            <h3>Follow Us</h3>
+            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="#"><i class="fab fa-youtube"></i> You Tube</a>
+            
+        </div>
+    </section>
+    <div class="credit">&copy; copyright @2023 by <span> Savna Tripathi </span> | All rights reserved!</div>
+</footer>
+
+
+
+<!-- footer section ends  -->
+    <script src="script.js"></script>
+    <script>
+        let dropdown_items = document.querySelectorAll('.job-filter form . dropdown-container .dropdown .lists .items');
+        dropdown_items.forEach(items=>{
+            items.onclick = () =>{
+            items.onclick = items.parentElement.parentElement;
+            let output = items_parent.querySelector('.output');
+            output.value = items.innerText;
+        }
+    });
+    </script>
+
+</body>
+</html>
